@@ -3,7 +3,9 @@ import React from 'react'
 
 function Footer() {
   return (
-    <h1>I am a Footer</h1>
+    <div className="container">
+      <h1>I am a Footer</h1>
+    </div>
   )
 }
 
