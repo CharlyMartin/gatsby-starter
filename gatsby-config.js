@@ -7,6 +7,10 @@ module.exports = {
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
+    `gatsby-transformer-sharp`,
+    `gatsby-plugin-sharp`,
+
+    // SOURCE FILE SYSTEM
     {
       // gatsby-source-filesystem adds the images and pages to the data layer
       // of Gastby (Accessible through GraphQL).
@@ -23,8 +27,8 @@ module.exports = {
         path: `${__dirname}/src/pages`,
       },
     },
-    `gatsby-transformer-sharp`,
-    `gatsby-plugin-sharp`,
+
+    // MANIFEST GENERATOR FOR PWA
     {
       // this (optional) plugin enables Progressive Web App + Offline functionality
       // To learn more, visit: https://gatsby.app/offline
@@ -40,6 +44,8 @@ module.exports = {
         icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
       },
     },
+
+    // XML SITEMAP GENERATOR
     {
       // it uses the siteUrl in siteMetadata (line 2).
       // Make sure to update the url of the website
@@ -48,6 +54,8 @@ module.exports = {
         output: `/sitemap.xml`,
       }
     },
+
+    // GOOGLE FONTS
     {
       // Prefetches webfonts during build, instead of loading external stylesheet at page load.
       // Increase performance.
@@ -65,16 +73,34 @@ module.exports = {
         ],
       },
     },
+    
+    // GOOGLE TAG MANAGER
     {
-      // Needs to be last in the array of plugins
-      // Seems to be fantastic to create on-the-spot redirects
-      // https://www.netlify.com/docs/redirects/
+      // Simply load Google Tag Manager on the initial page/app load.
+      resolve: `gatsby-plugin-google-tagmanager`,
+      // options: {
+      //   id: "YOUR_GOOGLE_TAGMANAGER_ID",
+  
+      //   // Include GTM in development.
+      //   // Defaults to false meaning GTM will only be loaded in production.
+      //   includeInDevelopment: false,
+  
+      //   // Specify optional GTM environment details.
+      //   gtmAuth: "YOUR_GOOGLE_TAGMANAGER_ENVIROMENT_AUTH_STRING",
+      //   gtmPreview: "YOUR_GOOGLE_TAGMANAGER_ENVIROMENT_PREVIEW_NAME",
+      // },
+    },
+    
+    // NETLIFY
+    {
+      // Needs to be last in the array of plugins!
+      // Seems fantastic to create on-the-spot redirects: https://www.netlify.com/docs/redirects/
       resolve: `gatsby-plugin-netlify`,
       // options: {
       //   headers: {}, // option to add more headers. `Link` headers are transformed by the below criteria
       //   allPageHeaders: [], // option to add headers for all pages. `Link` headers are transformed by the below criteria
-      // createRedirect({ fromPath: "/old-url", toPath: "/new-url", isPermanent: true }),
-      // createRedirect({ fromPath: "/url", toPath: "/zn-CH/url", Language: "zn" }),
+      //   createRedirect({ fromPath: "/old-url", toPath: "/new-url", isPermanent: true }),
+      //   createRedirect({ fromPath: "/url", toPath: "/zn-CH/url", Language: "zn" }),
       // },
     },
   ]
