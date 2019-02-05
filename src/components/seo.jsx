@@ -11,56 +11,21 @@ function SEO({ description, lang, meta, keywords, title }) {
         const metaDescription =
           description || data.site.siteMetadata.description
         return (
-          <Helmet
-            htmlAttributes={{
-              lang,
-            }}
-            title={title}
-            titleTemplate={`%s | ${data.site.siteMetadata.title}`}
-            // meta={[
-            //   {
-            //     name: `description`,
-            //     content: metaDescription,
-            //   },
-            //   {
-            //     property: `og:title`,
-            //     content: title,
-            //   },
-            //   {
-            //     property: `og:description`,
-            //     content: metaDescription,
-            //   },
-            //   {
-            //     property: `og:type`,
-            //     content: `website`,
-            //   },
-            //   {
-            //     name: `twitter:card`,
-            //     content: `summary`,
-            //   },
-            //   {
-            //     name: `twitter:creator`,
-            //     content: data.site.siteMetadata.author,
-            //   },
-            //   {
-            //     name: `twitter:title`,
-            //     content: title,
-            //   },
-            //   {
-            //     name: `twitter:description`,
-            //     content: metaDescription,
-            //   },
-            // ]
-            //   .concat(
-            //     keywords.length > 0
-            //       ? {
-            //           name: `keywords`,
-            //           content: keywords.join(`, `),
-            //         }
-            //       : []
-            //   )
-            //   .concat(meta)}
-          />
+          <Helmet htmlAttributes={{lang}}
+                  title={title}
+                  titleTemplate={`%s | ${data.site.siteMetadata.title}`}>
+
+            {/* <meta name="description"          content={metaDescription} />
+            <meta property="og:url"           content={meta[locale].facebook.url} />
+            <meta property="og:type"          content="website" />
+            <meta property="og:locale"        content={meta[locale].facebook.locale} />
+            <meta property="og:site_name"     content={meta[locale].facebook.title} />
+            <meta property="og:title"         content={meta[locale].facebook.title} />
+            <meta property="og:description"   content={meta[locale].facebook.description} />
+            <meta property="og:image"         content={image} />
+            <meta property="og:image:width"   content="1200" />
+            <meta property="og:image:height"  content="800" /> */}
+          </Helmet>
         )
       }}
     />

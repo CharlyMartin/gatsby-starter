@@ -5,6 +5,16 @@ import Header from './header'
 import Footer from './footer';
 import '../css/app.css';
 
+const query = graphql`
+  query SiteTitleQuery {
+    site {
+      siteMetadata {
+        title
+      }
+    }
+  }
+`
+
 const Layout = ({ children }) => (
   <StaticQuery
     query={query}
@@ -18,19 +28,4 @@ const Layout = ({ children }) => (
   />
 )
 
-// Layout.propTypes = {
-//   children: PropTypes.node.isRequired,
-// }
-
 export default Layout
-
-
-const query = graphql`
-  query SiteTitleQuery {
-    site {
-      siteMetadata {
-        title
-      }
-    }
-  }
-`
