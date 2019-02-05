@@ -1,14 +1,15 @@
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Default Starter`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
-    author: `@gatsbyjs`,
+    title: `Gatsby Starter`,
+    description: `The starter file from Charly Martin`,
+    author: `Charly Martin`,
+    siteUrl: `https://www.gueely.com`
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
-    // gatsby-source-filesystem adds the images and pages to the data layer
-    // of Gastby (Accessible through GraphQL).
     {
+      // gatsby-source-filesystem adds the images and pages to the data layer
+      // of Gastby (Accessible through GraphQL).
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `images`,
@@ -25,6 +26,9 @@ module.exports = {
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     {
+      // this (optional) plugin enables Progressive Web App + Offline functionality
+      // To learn more, visit: https://gatsby.app/offline
+      // 'gatsby-plugin-offline',
       resolve: `gatsby-plugin-manifest`,
       options: {
         name: `gatsby-starter-default`,
@@ -36,8 +40,11 @@ module.exports = {
         icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
       },
     },
-    // this (optional) plugin enables Progressive Web App + Offline functionality
-    // To learn more, visit: https://gatsby.app/offline
-    // 'gatsby-plugin-offline',
+    {
+      resolve: `gatsby-plugin-sitemap`,
+      options: {
+        output: `/sitemap.xml`,
+      }
+    },
   ],
 }
