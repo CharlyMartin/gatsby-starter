@@ -49,6 +49,8 @@ module.exports = {
       }
     },
     {
+      // Prefetches webfonts during build, instead of loading external stylesheet at page load.
+      // Increase performance.
       resolve: `gatsby-plugin-prefetch-google-fonts`,
       options: {
         fonts: [
@@ -62,6 +64,18 @@ module.exports = {
           },
         ],
       },
-    }
+    },
+    {
+      // Needs to be last in the array of plugins
+      // Seems to be fantastic to create on-the-spot redirects
+      // https://www.netlify.com/docs/redirects/
+      resolve: `gatsby-plugin-netlify`,
+      // options: {
+      //   headers: {}, // option to add more headers. `Link` headers are transformed by the below criteria
+      //   allPageHeaders: [], // option to add headers for all pages. `Link` headers are transformed by the below criteria
+      // createRedirect({ fromPath: "/old-url", toPath: "/new-url", isPermanent: true }),
+      // createRedirect({ fromPath: "/url", toPath: "/zn-CH/url", Language: "zn" }),
+      // },
+    },
   ]
 }
