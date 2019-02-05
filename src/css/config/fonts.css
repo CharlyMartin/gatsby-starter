@@ -26,6 +26,7 @@ Stick to px or rem units, it’s the only way to guarantee you’re sticking to 
 
 /* Headings */
 h1 {
+  font-family: 'Oswald';
   /* color: var(--black-dark);
   font-size: var(--h1-size);
   font-weight: 800;
@@ -49,7 +50,8 @@ h4 {
 
 /* Body */
 p, .text {
-
+  font-family: 'Open Sans';
+  font-size: 16px;
 }
 
 .text-small {

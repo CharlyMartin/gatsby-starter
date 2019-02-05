@@ -41,10 +41,27 @@ module.exports = {
       },
     },
     {
+      // it uses the siteUrl in siteMetadata (line 2).
+      // Make sure to update the url of the website
       resolve: `gatsby-plugin-sitemap`,
       options: {
         output: `/sitemap.xml`,
       }
     },
-  ],
+    {
+      resolve: `gatsby-plugin-prefetch-google-fonts`,
+      options: {
+        fonts: [
+          {
+            family: `Oswald`,
+            subsets: [`latin`],
+          },
+          {
+            family: `Open Sans`,
+            variants: [`400`, `700`]
+          },
+        ],
+      },
+    }
+  ]
 }
