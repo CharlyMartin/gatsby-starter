@@ -94,7 +94,9 @@ module.exports = {
     // NETLIFY
     {
       // Needs to be last in the array of plugins!
-      // Seems fantastic to create on-the-spot redirects: https://www.netlify.com/docs/redirects/
+      // Seems fantastic to create on-the-spot redirects
+      // https://www.gatsbyjs.org/docs/actions/#createRedirect
+      // https://www.netlify.com/docs/redirects/
       resolve: `gatsby-plugin-netlify`,
       // options: {
       //   headers: {}, // option to add more headers. `Link` headers are transformed by the below criteria
