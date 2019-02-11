@@ -1,6 +1,6 @@
 {
   "name": "gatsby-starter",
-  "private": true,
+  "private": false,
   "description": "A simple starter to get up and developing quickly with Gatsby, with all the necessary web plugins",
   "version": "0.1.0",
   "author": "Charly Martin",
@@ -31,7 +31,8 @@
     "develop": "gatsby develop",
     "start": "npm run develop",
     "format": "prettier --write \"src/**/*.js\"",
-    "test": "echo \"Write tests! -> https://gatsby.app/unit-testing\""
+    "test": "echo \"Write tests! -> https://gatsby.app/unit-testing\"",
+    "clean": "rm -rf .cache && rm -rf public"
   },
   "devDependencies": {
     "prettier": "^1.15.2"
